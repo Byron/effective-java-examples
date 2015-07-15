@@ -5,7 +5,14 @@
 			"folder_exclude_patterns":
 			[
 				".git",
+				".idea",
+				".cargo",
+				"etc",
+				"target",
 				"bin"
+			],
+			"file_exclude_patterns": [
+				"*.iml"
 			],
 			"path": "../.."
 		}
