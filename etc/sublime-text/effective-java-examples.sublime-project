@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				".git",
+				"bin"
+			],
+			"path": "../.."
+		}
+	],
+	"javatar":
+	{
+		"source_folder": "src/main/java"
+	}
+}
