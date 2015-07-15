@@ -1,8 +1,13 @@
 # Effective Java Examples
 
-Diese Quelltexte stammen aus dem Buch "Effective Java Second Edition", geschrieben von Joshua Bloch.
+The source code contained herein is from the book "Effective Java Second Edition" by Joshua Bloch.
 
-Die Quellen sind beinahe unverändert. Lediglich die Packetnamen wurden von mir angepasst.
+All sources are nearly unchanged, only the package names where adjusted.
 
-Die Originalquellen können hier herunter geladen werden: http://java.sun.com/docs/books/effective/index.html
+The source code was originally available from http://java.sun.com/docs/books/effective/index.html, by now the URL turns out to not lead to the desired source code anymore.
+
+# Java and Rust
+
+While reading the book, I will see how given design patterns are translating into the Rust world, and
+will add the respective code here using various cargo projects.
 
