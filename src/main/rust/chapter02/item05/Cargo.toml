@@ -1,0 +1,10 @@
+[package]
+name = "item05"
+version = "0.1.0"
+authors = ["Sebastian Thiel <byronimo@gmail.com>"]
+
+[profile.release]
+debug-assertions = true
+
+[dependencies]
+chrono = "*"
