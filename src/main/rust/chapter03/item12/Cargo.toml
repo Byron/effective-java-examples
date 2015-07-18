@@ -1,0 +1,12 @@
+[package]
+name = "item12"
+version = "0.1.0"
+authors = ["Sebastian Thiel <byronimo@gmail.com>"]
+
+[[bin]]
+path = "src/main.rs"
+name = "phone"
+
+[[bin]]
+path = "src/argsort.rs"
+name = "argsort"
