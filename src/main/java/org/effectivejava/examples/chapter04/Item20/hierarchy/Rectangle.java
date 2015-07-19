@@ -1,6 +1,6 @@
 package org.effectivejava.examples.chapter04.Item20.hierarchy;
 
-class Rectangle extends Figure {
+class Rectangle implements Figure {
 	final double length;
 	final double width;
 
@@ -9,7 +9,7 @@ class Rectangle extends Figure {
 		this.width = width;
 	}
 
-	double area() {
+	public double area() {
 		return length * width;
 	}
 }
