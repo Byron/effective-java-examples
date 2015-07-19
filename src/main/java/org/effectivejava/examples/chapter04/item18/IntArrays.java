@@ -11,6 +11,7 @@ public class IntArrays {
 			throw new NullPointerException();
 
 		return new AbstractList<Integer>() {
+			@Override
 			public Integer get(int i) {
 				return a[i]; // Autoboxing (Item 5)
 			}
