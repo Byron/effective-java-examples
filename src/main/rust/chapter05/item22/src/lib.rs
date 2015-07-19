@@ -1,11 +1,46 @@
 pub struct Foo {
-    pub a: u16,
-    pub b: u16,
+    a: u16,
+    b: u16,
+}
+
+pub struct Builder {
+    inner: Foo,
 }
 
 impl Foo {
+
+    pub fn new(a: u16, b: u16) -> Foo {
+        Foo {
+            a: a,
+            b: b,
+        }
+    }
+
     pub fn iter<'a>(&'a self) -> Iter<'a> {
         Iter::new(self)
+    }
+}
+
+impl Builder {
+
+    pub fn new() -> Self {
+        Builder {
+            inner: Foo::new(0, 0),
+        }
+    }
+
+    pub fn a(mut self, v: u16) -> Self {
+        self.inner.a = v;
+        self
+    }
+
+    pub fn b(mut self, v: u16) -> Self {
+        self.inner.b = v;
+        self
+    }
+
+    pub fn build(self) -> Foo {
+        return self.inner
     }
 }
 
