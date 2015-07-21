@@ -51,5 +51,11 @@ public class Reduction {
 		System.out.println(reduce(intList, PRODUCT, 1));
 		System.out.println(reduce(intList, MAX, Integer.MIN_VALUE));
 		System.out.println(reduce(intList, MIN, Integer.MAX_VALUE));
+
+		System.out.println(reduce(intList, new Function<Integer>() {
+			public Integer apply(Integer i1, Integer i2) {
+				return Math.min(i1, i2);
+			}
+		}, Integer.MAX_VALUE));
 	}
 }
