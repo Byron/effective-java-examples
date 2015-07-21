@@ -1,3 +1,7 @@
+use std::borrow::Borrow;
+
+pub struct NonCopyable;
+
 pub struct Foo {
     a: u16,
     b: u16,
@@ -16,7 +20,11 @@ impl Foo {
         }
     }
 
-    pub fn iter<'a>(&'a self) -> Iter<'a> {
+    pub fn iter(&self) -> Iter<&Self> {
+        Iter::new(self)
+    }
+
+    pub fn into_iter(self) -> Iter<Self> {
         Iter::new(self)
     }
 }
@@ -44,13 +52,13 @@ impl Builder {
     }
 }
 
-pub struct Iter<'a> {
+pub struct Iter<T> where T: Borrow<Foo> {
     state: u8,
-    inner: &'a Foo
+    inner: T
 }
 
-impl<'a> Iter<'a> {
-    fn new(foo: &'a Foo) -> Iter<'a> {
+impl<T> Iter<T> where T: Borrow<Foo> {
+    fn new(foo: T) -> Iter<T> {
         Iter {
             state: 0,
             inner: foo
@@ -58,18 +66,18 @@ impl<'a> Iter<'a> {
     }
 }
 
-impl<'a> Iterator for Iter<'a> {
+impl<T> Iterator for Iter<T> where T: Borrow<Foo> {
     type Item = u16;
 
     fn next(&mut self) -> Option<Self::Item> {
         match self.state {
             0 => {
                 self.state += 1;
-                Some(self.inner.a)
+                Some(self.inner.borrow().a)
             }
             1 => {
                 self.state += 1;
-                Some(self.inner.b)
+                Some(self.inner.borrow().b)
             }
             _ => None
         }
