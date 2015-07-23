@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Indicates that the annotated method is a test method that must throw the any
+ * Indicates that the annotated method is a test method that must throw any
  * of the designated exceptions to succeed.
  */
 
