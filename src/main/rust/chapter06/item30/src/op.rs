@@ -41,7 +41,7 @@ impl FromStr for Operation {
             "-" => Minus,
             "*" => Times,
             "/" => Divide,
-            _   => return Err(format!("{} is not a valid operation", s))
+            _   => return Err(format!("'{}' is not a valid operation", s))
         })
     }
 }
